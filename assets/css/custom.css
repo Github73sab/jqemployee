@@ -1,0 +1,79 @@
+header {
+	background:#e7e7e7 url('../img/header-bg3.jpg') right center no-repeat;
+}
+
+a {
+	color:#2c5e04;
+	outline:none;
+}
+
+#logo {
+	padding:10px;
+}
+
+#sidebar {
+	padding:10px;
+	background:#686868;
+	color:#fff;
+}
+
+#sidebar a {
+	color:#b1b1b1;
+}
+
+#content {
+	position:relative;
+	padding:10px 10px 10px 0;
+}
+
+.main-menu-wrapper{
+	background:url('../img/menubar-bg.jpg') left center repeat-x;
+	height:28px;
+	padding:10px;
+}
+
+.menu-spacing {
+	height:10px;
+}
+
+.btn-group {	
+	float:left;
+}
+
+ul.dropdown-menu li a:hover {
+	background:#4a8d08;
+}
+
+#add-employee {
+	display:none;
+	position:absolute;
+	top:40px;
+	left:0;
+	border:1px solid black;
+	padding:10px 20px;
+  	background-color: #e0e0e0;
+  	border: 1px solid #cccccc;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+          transition: border linear 0.2s, box-shadow linear 0.2s;	
+	
+}
+
+.form-horizontal .controls {
+margin-left: 110px;
+}
+
+.form-horizontal .control-label {
+float: left;
+width: 80px;
+padding-top: 5px;
+text-align: right;
+}
