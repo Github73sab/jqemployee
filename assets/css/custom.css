@@ -68,12 +68,12 @@ ul.dropdown-menu li a:hover {
 }
 
 .form-horizontal .controls {
-margin-left: 110px;
+margin-left: 120px;
 }
 
 .form-horizontal .control-label {
 float: left;
-width: 80px;
+width: 100px;
 padding-top: 5px;
 text-align: right;
 }

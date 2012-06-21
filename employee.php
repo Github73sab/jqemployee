@@ -5,9 +5,23 @@
 		});
 		
 		$('.add-employee').click(function(){
-			$("#add-employee").fadeToggle()
+			$("#add-employee").fadeToggle();
 		});
+
 	});
+</script>
+
+<script type="text/javascript">
+			
+		$('form').submit(function(){			
+			var eid = ($'#employee-id').attr('value');
+			var fullname = ($'#fullname').attr('value');
+			var address = ($'#address').attr('value');
+			var birthdate = ($'#birthdate').attr('value');
+			var postcode = ($'#postcode').attr('value');
+			var phone = ($'#phone').attr('value');					
+		})
+	
 </script>
 <div class="btn-group">
 	<a class="btn add-employee"><i class="icon-plus"></i> Add</a>
@@ -23,20 +37,20 @@
 				<div class="controls"><input type="text" class="input-small" id="employee-id"></div>
 			</div>
 			<div class="control-group">
-				<label class="control-label span1" for="full-name">Full Name &nbsp;</label>
-				<div class="controls"><input type="text" class="input-large" id="full-name"></div>
+				<label class="control-label span1" for="fullname">Full Name &nbsp;</label>
+				<div class="controls"><input type="text" class="input-large" id="fullname"></div>
 			</div>
 			<div class="control-group">
 				<label class="control-label span1" for="address">Address &nbsp;</label>
 				<div class="controls"><textarea type="text" class="input-large" id="address"></textarea></div>
 			</div>				
 			<div class="control-group">
-				<label class="control-label span1" for="birth-date">Birth Date &nbsp;</label>
-				<div class="controls"><input type="text" class="input-small" id="birth-date"></div>
+				<label class="control-label span1" for="birthdate">Birth Date &nbsp;</label>
+				<div class="controls"><input type="text" class="input-small" id="birthdate"></div>
 			</div>			
 			<div class="control-group">
-				<label class="control-label span1" for="post-code">Post Code &nbsp;</label>
-				<div class="controls"><input type="text" class="input-small" id="post-code"></div>
+				<label class="control-label span1" for="postcode">Post Code &nbsp;</label>
+				<div class="controls"><input type="text" class="input-small" id="postcode"></div>
 			</div>	
 			<div class="control-group">
 				<label class="control-label span1" for="phone">Phone Number &nbsp;</label>
@@ -44,7 +58,7 @@
 			</div>			
 				<div class="control-group" style="float:right;padding-right:40px;">
 					<a class="btn add-employee">Cancel</a>
-					<a class="btn btn-primary add-employee">Submit</a>
+					<input type="submit" class="btn btn-primary add-employee">Submit</a>
 				</div>										
 	</form>
 </div>
@@ -77,7 +91,11 @@ if($result !== false) {
 		$tbl->addCell($row['phone']);
     	$tbl->addRow($class="hide");
     	$tbl->addCell();
-		$tbl->addCell('<table ><tr><td>'.$row["address"].' '.$row["postcode"].'</td></tr></table>',NULL,'data',array('colspan'=>3));
+		$tbl->addCell('<table class="table table-bordered">
+							<tr><th>Address</th><th>PostCode</th></tr>
+							<tr><td>'.$row["address"].'</td><td>'.$row["postcode"].'</td></tr>
+						</table>',
+						NULL,'data',array('colspan'=>3));
     }
 	
 	echo $tbl->display();
