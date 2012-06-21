@@ -12,16 +12,28 @@
 </script>
 
 <script type="text/javascript">
-			
+
+$(document).ready(function(){			
 		$('form').submit(function(){			
 			var eid = ($'#employee-id').attr('value');
 			var fullname = ($'#fullname').attr('value');
 			var address = ($'#address').attr('value');
-			var birthdate = ($'#birthdate').attr('value');
+			var email = ($'#email').attr('value');
 			var postcode = ($'#postcode').attr('value');
-			var phone = ($'#phone').attr('value');					
-		})
-	
+			var phone = ($'#phone').attr('value');
+			
+			alert(phone)
+			
+			$.Ajax({
+				type: "POST",
+				url: "add_employee.php",
+				data: "eid=" + eid + "&amp;fullname=" + fullname + "&amp;address=" + address + "&amp;birthdate=" + birthdate + "&amp;postcode=" + postcode + "&amp;phone=" + phone,
+				success: function(){ }
+			});
+						
+			return false;
+		});
+});
 </script>
 <div class="btn-group">
 	<a class="btn add-employee"><i class="icon-plus"></i> Add</a>
@@ -31,7 +43,7 @@
 
 <!-- Add employee -->
 <div id="add-employee">
-	<form class="form-horizontal">	
+	<form class="form-horizontal" method="post" action="add_employee.php">	
 			<div class="control-group">
 				<label class="control-label span1" for="employee-id">Employee ID &nbsp;</label>
 				<div class="controls"><input type="text" class="input-small" id="employee-id"></div>
@@ -45,8 +57,8 @@
 				<div class="controls"><textarea type="text" class="input-large" id="address"></textarea></div>
 			</div>				
 			<div class="control-group">
-				<label class="control-label span1" for="birthdate">Birth Date &nbsp;</label>
-				<div class="controls"><input type="text" class="input-small" id="birthdate"></div>
+				<label class="control-label span1" for="email">Email &nbsp;</label>
+				<div class="controls"><input type="text" class="input-large" id="email"></div>
 			</div>			
 			<div class="control-group">
 				<label class="control-label span1" for="postcode">Post Code &nbsp;</label>
@@ -58,7 +70,7 @@
 			</div>			
 				<div class="control-group" style="float:right;padding-right:40px;">
 					<a class="btn add-employee">Cancel</a>
-					<input type="submit" class="btn btn-primary add-employee">Submit</a>
+					<input type="submit" class="btn btn-primary add-employee" value="Submit">
 				</div>										
 	</form>
 </div>

@@ -44,9 +44,9 @@ function loadData(node){
 }
 
 function loadFile(page){
-    $("#content").html('<span class="load"><img src="img/loading.gif" alt="Loading..." /></span>');
+    $("#content").html('<span class="load"><img src="assets/img/loading.gif" alt="Loading..." /></span>');
     $.click(function(){
-        $.get(""+ page + ".html", function(data){
+        $.get( "" + page + "" , function(data){
             $("#content").html(data).hide().fadeIn("slow");
         });
     });
