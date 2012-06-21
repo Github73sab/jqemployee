@@ -69,20 +69,15 @@ if($result !== false) {
 	
     // Parse the result set
     foreach($result as $row) {
-    		
-    	$data_detail .= " Address = ". $row['Address']." <br/> ";
-    	$data_detail .= " Address = ". $row['Address']." <br/> ";
-		$data_detail .= " Address = ". $row['Address']." <br/> ";
-		$data_detail .= " Address = ". $row['Address']." <br/> ";
 		
     	$tbl->addRow();
-    	$tbl->addCell($row['Id']);
-		$tbl->addCell('<a class="show-detail" href="#">'.$row['FullName'].'</a>');
-		$tbl->addCell($row['EmployeeID']);
-		$tbl->addCell($row['Mobile']);
+    	$tbl->addCell($row['uid']);
+		$tbl->addCell('<a class="show-detail" href="#">'.$row['full_name'].'</a>');
+		$tbl->addCell($row['employee_id']);
+		$tbl->addCell($row['phone']);
     	$tbl->addRow($class="hide");
     	$tbl->addCell();
-		$tbl->addCell('<table ><tr><td>'.$row["Address"].' '.$row["PostCode"].'</td></tr></table>',NULL,'data',array('colspan'=>3));
+		$tbl->addCell('<table ><tr><td>'.$row["address"].' '.$row["postcode"].'</td></tr></table>',NULL,'data',array('colspan'=>3));
     }
 	
 	echo $tbl->display();
